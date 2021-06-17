@@ -212,14 +212,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     margin: 0;
+    padding-top: 50px;
+  }
+
+  .contenedor-redes {
+    padding-top: 20px;
   }
 
   .contenedor-redes a {
     width: 28px;
     height: 28px;
-    margin: 0 20px;
+    margin: 0 24px;
   }
 
   /* /Footer */
