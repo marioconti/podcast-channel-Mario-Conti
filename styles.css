@@ -1,4 +1,11 @@
-/* TODO:hacer variables css para textos y para colores que se repitan */
+:root {
+  --color-1: #060a24;
+  --color-2: #000000;
+  --color-3: #0000ec;
+  --color-3-1: #0000a3;
+  --color-4: #ffffff;
+  --color-5: #00f3bb;
+}
 
 html {
   box-sizing: border-box;
@@ -9,7 +16,7 @@ html {
 *:after {
   box-sizing: inherit;
   font-family: "IBM Plex Mono", monospace;
-  color: #060a24;
+  color: var(--color-1);
   margin: 0;
   padding: 0;
 }
@@ -39,7 +46,7 @@ a.links {
   text-decoration: none;
   font-size: 16px;
   padding: 0px 26px;
-  color: rgb(6, 10, 36);
+  color: var(--color-1);
   letter-spacing: 0;
   line-height: 28px;
   text-transform: uppercase;
@@ -47,34 +54,79 @@ a.links {
 }
 
 a.links:hover {
-  color: rgb(0, 243, 187);
+  color: var(--color-5);
   text-decoration: line-through;
 }
 
 a.links:active {
-  color: rgba(6, 10, 36, 0.56);
+  color: rgba(6, 10, 36, 0.561);
 }
 
 .navbar-mobile {
   display: none;
-  overflow: hidden;
 }
 
 #hamburguesa {
   display: none;
 }
-.nav-menu-mobile {
-  transform: translateX(100%);
-  transition: all 0.3s ease;
+
+.menu-hamburguesa span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  position: relative;
+  background-color: var(--color-2);
+  transition: 0.3s ease;
 }
-.nav-menu-mobile div {
-  height: 50px;
+
+.linea-1 {
+  transform-origin: 10% 0%;
+  margin-bottom: 3px;
+}
+
+.linea-2 {
+  margin-bottom: 3px;
+}
+
+.linea-3 {
+  transform-origin: 10% 100%;
+}
+
+input:checked ~ label .linea-1 {
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .linea-2 {
+  opacity: 0;
+}
+
+input:checked ~ label .linea-3 {
+  transform: rotate(-45deg);
+}
+
+.nav-menu-mobile {
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.nav-menu-mobile ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  background-color: var(--color-3);
+  cursor: pointer;
+}
+.nav-menu-mobile ul li {
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  color: white;
-  background-color: #0000ec;
-  cursor: pointer;
+  height: 55px;
+}
+.nav-menu-mobile ul li a {
+  color: var(--color-4);
 }
 
 /* /NAV */
@@ -105,7 +157,7 @@ p.texto-principal {
   display: block;
   width: 39rem;
   font-size: 16px;
-  color: rgb(6, 10, 36);
+  color: var(--color-1);
   letter-spacing: 0;
   line-height: 24px;
 }
@@ -123,21 +175,21 @@ a.boton-principal {
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  color: rgb(6, 10, 36);
-  background: rgb(0, 243, 187);
+  color: var(--color-1);
+  background: var(--color-5);
 }
 .boton-principal:hover {
   font-family: "IBM Plex Mono", monospace;
-  color: rgb(255, 255, 255);
+  color: var(--color-4);
   background-image: linear-gradient(
     225deg,
-    rgb(0, 0, 254) 0%,
-    rgb(0, 240, 184) 100%
+    var(--color-3) 0%,
+    var(--color-5) 100%
   );
 }
 
 span.dot {
-  color: blue;
+  color: var(--color-3);
 }
 /* /PRINCIPAL */
 
@@ -146,8 +198,8 @@ span.dot {
   height: 1042px;
   background-image: linear-gradient(
     225deg,
-    rgb(0, 0, 255) 0%,
-    rgb(0, 0, 163) 100%
+    var(--color-3) 0%,
+    var(--color-3-1) 100%
   );
   clip-path: polygon(100% 2%, 100% 88%, 0 100%, 0 13%);
 }
@@ -162,7 +214,7 @@ span.dot {
   line-height: 62px;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
-  color: rgb(255, 255, 255);
+  color: var(--color-4);
   letter-spacing: 0;
 }
 
@@ -206,13 +258,13 @@ span.dot {
 .encabezado {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 48px;
-  color: rgb(6, 10, 36);
+  color: var(--color-1);
   letter-spacing: 0;
   margin: 24px 0px;
 }
 .texto-dedonde {
   font-size: 16px;
-  color: rgb(6, 10, 36);
+  color: var(--color-1);
   line-height: 24px;
 }
 /* /SECCIÓN De dónde venimos */
@@ -267,7 +319,7 @@ span.dot {
 .galeria-temas .tema p {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 24px;
-  color: #060a24;
+  color: var(--color-1);
   letter-spacing: 0;
   text-align: center;
   font-weight: bold;
@@ -284,8 +336,8 @@ span.dot {
   height: 500px;
   background-image: linear-gradient(
     225deg,
-    rgb(0, 0, 255) 0%,
-    rgb(0, 0, 163) 100%
+    var(--color-3) 0%,
+    var(--color-3-1) 100%
   );
   clip-path: polygon(100% 0%, 100% 100%, 0 100%, 0 28%);
 }
@@ -300,7 +352,7 @@ span.dot {
 .seccion-novedades p {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 48px;
-  color: #ffffff;
+  color: var(--color-4);
   letter-spacing: 0;
   text-align: center;
 }
@@ -325,11 +377,11 @@ span.dot {
   width: 28px;
   height: 28px;
   margin-right: 26px;
-  color: #060a24;
+  color: var(--color-1);
 }
 
 .contenedor-redes a :hover {
-  color: rgb(0, 243, 187);
+  color: var(--color-5);
 }
 /* /Footer */
 

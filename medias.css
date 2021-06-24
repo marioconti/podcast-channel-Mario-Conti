@@ -1,4 +1,12 @@
 @media screen and (max-width: 899px) {
+  :root {
+    --color-1: #060a24;
+    --color-2: #000000;
+    --color-3: #0000ec;
+    --color-3-1: #0000a3;
+    --color-4: #ffffff;
+    --color-5: #00f3bb;
+  }
   /* NAV DESKTOP-NAVMOBILE*/
   .menu {
     display: none;
@@ -7,8 +15,12 @@
     display: block;
   }
 
+  .nav-menu-mobile {
+    width: 0%;
+  }
+
   #hamburguesa:checked ~ .nav-menu-mobile {
-    transform: translateX(0%);
+    width: 100%;
   }
 
   img.logo {
@@ -17,7 +29,7 @@
   }
 
   div.navbar {
-    margin: 0px 16px;
+    margin: 5px 16px;
     height: 44px;
   }
 
@@ -62,13 +74,12 @@
   /* /PRINCIPAL */
 
   /* EPISODIOS */
-  /* TODO:ver si se puede hacer un tranform/transition de la mascara desktop a la mobile para que no sea tan brusco el cambio */
   .contenedor-episodios {
     height: 920px;
     background-image: linear-gradient(
       225deg,
-      rgb(0, 0, 255) 0%,
-      rgb(0, 0, 163) 100%
+      var(--color-3) 0%,
+      var(--color-3-1) 100%
     );
     clip-path: polygon(100% 0%, 100% 95%, 0% 100%, 0 5%);
   }
@@ -142,7 +153,6 @@
   /* /SECCIÓN De dónde venimos */
 
   /* SECCIÓN Invitadas/os estelares */
-  /* FIXME:Ver tamaño de las fuentes de los titulos en la media querie, quiza combiene meter relativa em */
   .titulo-invitados {
     margin-left: 16px;
     margin-top: 0px;
@@ -193,10 +203,9 @@
   }
 
   .seccion-novedades p {
-    /* TODO:44 parece ser el tamañao bueno para la fuente de los titulos ver si conviene calcular con em */
     margin: 0 16px;
     font-size: 44px;
-    color: #ffffff;
+    color: var(--color-4);
     text-align: center;
   }
 
